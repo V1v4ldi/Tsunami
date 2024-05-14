@@ -1,16 +1,16 @@
 <?php
 class Siswa_models {
-    private $siswa =
-    [
-        [
-            "nama" => "Rikza H",
-            "nrp" => "023423",
-            "email" => "rikzahasan@gmail.id"
-            ]
-        ];
+    private $table = 'murid';
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new Database;
+    }
 
     public function semuasiswa()
     {
-        return $this->siswa;
+        $this->db->query('SELECT * FROM ' . $this->table);
+        return $this->db->Allresult();
     }
 }
