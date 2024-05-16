@@ -5,8 +5,8 @@ class Siswa extends Controller
     {
         $data['judul'] = 'Daftar Mahasiswa';
         $data['siswa'] = $this->models('Siswa_models')->semuasiswa();
-        $this->view('templates/header', $data);
+        $this->view('templates/dsbheader', $data);
         $this->view('siswa/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/dsbfooter', $data);
     }
 }
