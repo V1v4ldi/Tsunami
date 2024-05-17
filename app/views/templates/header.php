@@ -19,7 +19,7 @@
                     <a class="nav-link active" aria-current="page" href="<?= baseurl;?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= baseurl;?>about">Features</a>
+                    <a class="nav-link" href="<?= baseurl;?>about">Logout</a>
                 </li>
             </ul>
         </div>
