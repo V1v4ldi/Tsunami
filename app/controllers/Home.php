@@ -13,35 +13,16 @@ class Home extends Controller{
         $data['judul'] = 'Halaman Login';
        
         $this->view('templates/header', $data);
-        $this->view('home/login');
+        $this->view('home/login', $data);
         $this->view('templates/footer');
 
         
     }
 
-    public function cek()
+    public function logincek()
     {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-    // Inisialisasi model
-    $this->userModel = $this->model('User_Model');
-
-    // Verifikasi pengguna
-    $role = $this->userModel->verifyUser($email, $password);
-
-    if ($role) {
-        // Jika verifikasi berhasil, arahkan pengguna ke halaman yang sesuai dengan role mereka
-        if ($role == 'admin') {
-            header('Location: /admin/dashboard');
-        } elseif ($role == 'guru') {
-            header('Location: /guru/dashboard');
-        } else { // murid
-            header('Location: /murid/dashboard');
+        if($this->models('Login_models')->ceklogin($_POST) == false){
+          alert('Email atau Password Salah');
         }
-    } else {
-        // Jika verifikasi gagal, tampilkan pesan error
-        // ...
-    }
     }
 }

@@ -32,10 +32,9 @@ class Database
         $this->stx = $this->dbh->prepare($query);
     }
 
-    public function bind($param, $value, $type = null)
-    {
-        if(is_null($type)){
-            switch(true){
+    public function bind($param, $value, $type = null) {
+        if (is_null($type)) {
+            switch (true) {
                 case is_int($value):
                     $type = PDO::PARAM_INT;
                     break;
@@ -49,7 +48,7 @@ class Database
                     $type = PDO::PARAM_STR;
             }
         }
-
+    
         $this->stx->bindValue($param, $value, $type);
     }
 

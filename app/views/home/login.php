@@ -19,22 +19,24 @@
       }
 
     </style>
+    
     <div class="card text-center">
-        
-        <div class="card-body">
-          <h2 class="card-title">LOGIN</h2>
-          <p class="card-text">Masukkan Email dan Password Anda</p>
-          <br>
-          <div class="mb-3 row">
-            <div class="col">
-            <input type="email" class="form-control" id="inputemail" placeholder="Email">
+        <form action="<?= baseurl?>Home/logincek" method="POST">
+          <div class="card-body">
+            <h2 class="card-title">LOGIN</h2>
+            <p class="card-text">Masukkan Email dan Password Anda</p>
+            <br>
+            <div class="mb-3 row">
+              <div class="col">
+                <input type="email" class="form-control" id="inputemail" placeholder="Email" name="email" required>
               </div>
-          </div>
-          <div class="mb-3 row">
-            <div class="col">
-              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
             </div>
-          </div>
+            <div class="mb-3 row">
+              <div class="col">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required>
+              </div>
+            </div>
+          </form>
           <div class="mb-3 row">
             <div class="col">
               <button type="submit" class="btn btn-outline-primary">MASUK</button>

@@ -14,6 +14,7 @@
             input[type="number"] {
                 -moz-appearance: textfield;
             }
+            
         </style>
         <link rel="stylesheet" href="<?= baseurl; ?>css/bootstrap.css">
 </head>

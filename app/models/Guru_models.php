@@ -19,6 +19,7 @@ class Guru_models {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->Single();
+        
     }
 
     public function tambahdataguru($data)
