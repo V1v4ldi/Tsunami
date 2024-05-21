@@ -1,10 +1,9 @@
 <?php
-class Guru extends Controller
-{
+class Admin extends Controller{
     public function index()
     {
-        session_start();
-    if(!isset($_SESSION['id']) || $_SESSION['role'] != 'pengajar')
+    session_start();
+    if(!isset($_SESSION['id']) || $_SESSION['role'] != 'admin')
     {
         $_SESSION['message'] = "<SCRIPT> alert('Anda tidak memiliki akses!')
         window.location.replace('".baseurl."home/login');
@@ -12,11 +11,9 @@ class Guru extends Controller
         echo $_SESSION['message'];
     }
 
-        $data['judul'] = 'Dashboard Anda';
-        $data['guru'] = $this->models('Guru_models')->semuaguru();
+        $data['judul'] = 'About';
         $this->view('templates/header', $data);
-        $this->view('guru/index', $data);
+        $this->view('admin/index', $data);
         $this->view('templates/footer');
-        
     }
 }

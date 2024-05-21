@@ -19,7 +19,7 @@
       }
 
     </style>
-    
+
     <div class="card text-center">
         <form action="<?= baseurl?>Home/logincek" method="POST">
           <div class="card-body">

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 class Login_models
 {
@@ -11,6 +11,7 @@ class Login_models
     }
     
     private $tables = [
+        'admin' => 'admin',
         'guru' => 'pengajar',
         'murid' => 'siswa'
     ];
@@ -18,22 +19,39 @@ class Login_models
     public function ceklogin($data) {
         foreach ($this->tables as $table => $role) {
             
-        $query = 'SELECT * FROM ' . $table. ' WHERE email=:email AND password=:password';    
+        $query = 'SELECT * FROM ' . $table. ' WHERE email=:email';    
         
         $this->db->query($query);
         $this->db->bind(':email', $data['email']);
-        $this->db->bind(':password', $data['password']);
         $row = $this->db->single();
 
         // Jika pengguna ditemukan dan password cocok
-        if ($row) {
-            // User found and password matches, set session user_id and role
-            $_SESSION['user_id'] = $row['id'];
-            $_SESSION['role'] = $role;
-            return true;
+        if ($row !== false) {
+            // User found, check password
+            if ($data['password'] == $row['password']) {
+                // Password matches, set session and return true
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['role'] = $role;
+
+                // Kembalikan role
+                return $role;
+            } else {
+                // Password doesn't match
+                
+    
+                $message =  "<SCRIPT> //not showing me this
+                alert('Password Salah!')
+                window.location.replace('".baseurl."home/login');
+                </SCRIPT>";
+                return ['error' => $message];
+            }
         }
     }
-    // Jika tidak ada pengguna yang ditemukan atau password tidak cocok, kembalikan false
-    return false;
+    // User not found
+    $message = "<SCRIPT>
+    alert('User Tidak Ditemukan!')
+    window.location.replace('".baseurl."home/login');
+    </SCRIPT>";
+    return ['error' => $message];
     }
-}
+}   
