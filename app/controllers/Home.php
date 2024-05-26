@@ -2,6 +2,9 @@
 class Home extends Controller{
     public function index()
     {
+        session_start();
+        session_destroy();
+        
         $data['judul'] = 'Home';
         $this->view('templates/header', $data);
         $this->view('home/index', $data);
@@ -10,7 +13,9 @@ class Home extends Controller{
 
     public function login()
     {    
-       
+        session_start();
+        session_destroy();
+
         $data['judul'] = 'Halaman Login';
         $this->view('templates/header', $data);
         $this->view('home/login', $data);
@@ -19,12 +24,7 @@ class Home extends Controller{
 
     public function logincek()
     {
-        if(isset($_SESSION['id'])){
-            session_destroy();
-            session_start();
-        }
-            
-
+        session_start();
         $role = $this->models('Login_models')->ceklogin($_POST);
 
         if ($role){

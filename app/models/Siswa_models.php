@@ -10,16 +10,20 @@ class Siswa_models {
 
     public function semuasiswa()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT ' . $this->table . '.*, kelas.nama AS nama_kelas FROM ' . $this->table . ' 
+        INNER JOIN kelas ON ' . $this->table . '.kelas = kelas.id');
         return $this->db->Allresult();
     }
 
     public function siswabyid($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->query('SELECT '. $this->table . '.*, kelas.nama AS nama_kelas FROM ' . $this->table . ' 
+        INNER JOIN kelas ON ' .$this->table.'.kelas = kelas.id WHERE '. $this->table .'.id=:id');
         $this->db->bind('id', $id);
         return $this->db->Single();
     }
+    
+    
 
     public function tambahdatasiswa($data)
     {
@@ -37,4 +41,6 @@ class Siswa_models {
 
         return $this->db->rowCount();
     }
+
+    
 }

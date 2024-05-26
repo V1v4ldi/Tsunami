@@ -76,26 +76,20 @@
         var options = [
             '<option value="1">X-IPA-1</option>',
             '<option value="2">X-IPA-2</option>',
-            '<option value="3">X-IPA-3</option>',
-            '<option value="4">XI-IPA-1</option>',
-            '<option value="5">XI-IPA-2</option>',
-            '<option value="6">XI-IPA-3</option>',
-            '<option value="7">XII-IPA-1</option>',
-            '<option value="8">XII-IPA-2</option>',
-            '<option value="9">XII-IPA-3</option>'
+            '<option value="3">XI-IPA-1</option>',
+            '<option value="4">XI-IPA-2</option>',
+            '<option value="5">XII-IPA-1</option>',
+            '<option value="6">XII-IPA-2</option>'
         ];
         kelasDropdown.innerHTML = options.join('');
     } else if (selectedJurusan == '2') { // Jika IPS dipilih
         var options = [
-            '<option value="10">X-IPS-1</option>',
-            '<option value="11">X-IPS-2</option>',
-            '<option value="12">X-IPS-3</option>',
-            '<option value="13">XI-IPS-1</option>',
-            '<option value="14">XI-IPS-2</option>',
-            '<option value="15">XI-IPS-3</option>',
-            '<option value="16">XII-IPS-1</option>',
-            '<option value="17">XII-IPS-2</option>',
-            '<option value="18">XII-IPS-3</option>'
+            '<option value="7">X-IPS-1</option>',
+            '<option value="8">X-IPS-2</option>',
+            '<option value="9">XI-IPS-1</option>',
+            '<option value="10">XI-IPS-2</option>',
+            '<option value="11">XII-IPS-1</option>',
+            '<option value="12">XII-IPS-2</option>',
         ];
         kelasDropdown.innerHTML = options.join('');
     }

@@ -1,5 +1,14 @@
-<?php require_once '../app/config/ceksiswa.php';?>
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dadhboard guru</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
     *{
       
@@ -52,8 +61,19 @@ nav ul li{
         font-weight: bold;
         font-size: 24px;
     }
-  </style>
 
+
+  </style>
+  <nav>
+    <div class="logo">SMA VETERAN</div>
+    <ul>
+      <li><a href="dashboardguru.html">Home</a></li>
+      <li><a href="jadwal.html">Jadwal</a></li>
+      <li><a href="#">Nilai</a></li>
+      <li><a href="pilihanmasuk.html">Logout</a></li>
+       
+    </ul>
+  </nav>
   <br><br>
   <div class="container">
     <div class="row">
@@ -73,7 +93,7 @@ nav ul li{
          <h5 class="card-title">ATTENTIONS</h5><br>
          <p class="d-inline-flex gap-1">
           <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Jadwal penggunaan Seragam</a>
-          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Informasi pembayaran</button>
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Informasi Mingguan</button>
           <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Lihat Semua</button>
         </p>
         <div class="row">
@@ -84,28 +104,30 @@ nav ul li{
                 <tr>
                   <th scope="col">Hari</th>
                   <th scope="col">Seragam</th>
+                  
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Senin</th>
-                  <td>Osis</td>
+                  <td>Hitam Putih</td>
+                
                 </tr>
                 <tr>
                   <th scope="row">Selasa</th>
-                  <td>Osis</td>
+                  <td>Batik Sekolah</td>
                 </tr>
                 <tr>
                   <th scope="row">Rabu</th>
-                  <td>Batik</td>
+                  <td>Batik Bebas</td>
                 </tr>
                 <tr>
                   <th scope="row">Kamis</th>
-                  <td>Batik</td>
+                  <td>Baju Tradisional</td>
                 </tr>
                 <tr>
                   <th scope="row">Jumat</th>
-                  <td>Pramuka</td>
+                  <td>Bebas Sopan</td>
                 </tr>
               </tbody>
             </table>
@@ -114,7 +136,16 @@ nav ul li{
           <div class="col">
             <div class="collapse multi-collapse" id="multiCollapseExample2">
               <div class="card card-body">
-                Anda tidak mempunyai tunggakan pembayaran sekolah. <br> Terimakasih telah membayar dengan tepat waktu.
+                Belum ada pengumuman<br>
+
+              </div>
+            </div>
+          </div><br>
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+              <div class="card card-body">
+                Jadwal rapat dilakukan setiap hari SENIN dan KAMIS <br>
+
               </div>
             </div>
           </div>
@@ -122,3 +153,5 @@ nav ul li{
         </div>
       </div>
   </div>
+</body>
+</html>

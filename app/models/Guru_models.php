@@ -10,13 +10,15 @@ class Guru_models {
 
     public function semuaguru()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT '.$this->table. '.*, mapel.nama_mapel AS pelajaran FROM ' . $this->table . 
+        ' INNER JOIN mapel ON '. $this->table . '.id_pelajaran = mapel.id');
         return $this->db->Allresult();
     }
 
     public function gurubyid($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->query('SELECT '.$this->table. '.*, mapel.nama_mapel AS pelajaran FROM ' . $this->table . 
+        ' INNER JOIN mapel ON '. $this->table . '.id_pelajaran = mapel.id WHERE '. $this->table . '.id=:id');
         $this->db->bind('id', $id);
         return $this->db->Single();
         
