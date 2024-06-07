@@ -8,9 +8,15 @@ class Admin extends Controller{
     $data['admin'] = $this->models('Admin_models')->adminbyid($id);
     $data['siswa'] = $this->models('Siswa_models')->semuasiswa();
     $data['guru'] = $this->models('Guru_models')->semuaguru();
-    $this->view('templates/dsbheader', $data);
+    $this->view('templates/admin/dbadmin', $data);
     $this->view('admin/index', $data);
-    $this->view('templates/dsbfooter');
+    $this->view('templates/admin/ftadmin');
     }
 
+    public function hapusguru($id){
+        if($this->models('Guru_models')->hapusguru($id) > 0){
+            header('Location: '. baseurl . '/admin');
+            exit;
+        }
+    }
 }

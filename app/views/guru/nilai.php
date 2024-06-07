@@ -1,3 +1,4 @@
+<?php $_SESSION['alamat'] = baseurl."guru/nilai"; ?>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     
@@ -104,31 +105,41 @@ nav ul li{
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
+                        
                         <h5 class="card-title"></h5><br>
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">Nama Siswa</th>
-                                    <th scope="col">Kelas</th>
-                                    <th scope="col">Nilai</th>
-                                    <th scope="col">Edit Nilai</th>
-                                </tr>
-                                </thead>
-                                <tbody class="table-group-divider">
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Bahasa Indonesia</td>
-                                    <td>12</td>
-                                    <td></td>
-                                    <td><a href="#">Edit Nilai</a></td>
-                                </tr>
+                        <table class="table table-striped table-hover" style="text-align:center">
+                            <thead>
+                              <tr>
+                                <th scope="col">1</th>
+                                <th scope="col">Nama Siswa</th>
+                                <th scope="col">Kelas</th>
+                                <th scope="col" >Nilai (Rata-Rata)</th>
+                                <th scope="col">Update Nilai</th>
+                               
+                              </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                            <tbody>
+                                <?php foreach($data['nilai'] as $nilai) : ?>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td><?=$nilai['nama_siswa']?></td>
+                                <td><?=$nilai['nama_kelas'] ?></td>
+                                <td><?=$nilai['nilai_akhir']?></td>
+                                <td><a href="<?=baseurl.'Guru/formedit/'.$nilai['id_mapel'].'/'.$nilai['id_murid']?>">
+                                    <button type="button" class="btn btn-outline-primary">Edit Nilai</button></td>
+                                    </a>
+                              </tr>
+                                <?php endforeach; ?>
                             </tbody>
-                        </table>
+                          </table>
+                          <br>
+                          <div class="mb-6 row text-center">
+                            <div class="col">
+                            
+                         
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div></div>

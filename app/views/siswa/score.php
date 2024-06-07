@@ -1,4 +1,6 @@
-<?php require_once '../app/config/ceksiswa.php';?>
+
+<?php $_SESSION['mapel'] = $data['siswa']['id'] ?>
+<?php $_SESSION['alamat'] = baseurl.'siswa/score/'.$_SESSION['mapel']; ?>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     
@@ -131,7 +133,7 @@
                                         <th scope="row"><?= $hasil['id_mapel'] ?></th>
                                         <td><?= $hasil['pelajaran'] ?></td>
                                         <td><?= $hasil['pengajar'] ?></td>
-                                        <td></td>
+                                        <td><?= $hasil['nilai_akhir']?></td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

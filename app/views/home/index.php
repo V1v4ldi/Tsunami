@@ -1,4 +1,5 @@
-    <style>
+<?php $_SESSION['alamat'] =baseurl.'home' ?>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
        
    body {

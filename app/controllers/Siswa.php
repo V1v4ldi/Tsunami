@@ -36,4 +36,11 @@ class Siswa extends Controller
         $this->view('siswa/score', $data);
         $this->view('templates/murid/ftmurid');
     }
+
+    public function hapussiswa($id){
+        if($this->models('Siswa_models')->hapussiswa($id) > 0){
+            header('Location: ' . baseurl . '/admin');
+            exit;
+        }
+    }
 }

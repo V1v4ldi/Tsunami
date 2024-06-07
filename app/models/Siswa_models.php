@@ -42,5 +42,14 @@ class Siswa_models {
         return $this->db->rowCount();
     }
 
-    
+    public function hapussiswa($id)
+    {
+        $query = "DELETE FROM murid WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

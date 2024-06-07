@@ -1,3 +1,4 @@
+    <?php $_SESSION['alamat'] = baseurl."home/login"; ?>
     <style>
       body{
         background-image: url("https://wallpaperaccess.com/full/1850865.jpg") ;
@@ -19,7 +20,7 @@
       }
 
     </style>
-
+    
     <div class="card text-center">
         <form action="<?= baseurl?>Home/logincek" method="POST">
           <div class="card-body">

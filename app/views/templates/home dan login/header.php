@@ -7,7 +7,3 @@
     <link rel="stylesheet" href="<?= baseurl; ?>css/bootstrap.css">
 </head>
 <body>
-
-        
-        
-    

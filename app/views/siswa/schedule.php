@@ -1,5 +1,6 @@
-<?php require_once '../app/config/ceksiswa.php';?>
 
+<?php $_SESSION['mapel'] = $data['jadwal'][0]['id_kelas'] ?>
+<?php $_SESSION['alamat'] = baseurl.'siswa/schedule/'.$_SESSION['mapel']; ?>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
   *{

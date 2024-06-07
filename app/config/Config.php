@@ -6,4 +6,4 @@ define('baseurl','http://localhost/DataPraktikumPWD/TA/public/');
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_SCHEME','siswa');
+define('DB_SCHEME','siswa_new');

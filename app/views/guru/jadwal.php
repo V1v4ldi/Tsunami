@@ -1,4 +1,6 @@
-<?php require_once '../app/config/cekguru.php';?>
+
+<?php $_SESSION['mapel'] = $data['guru']['id_pelajaran'] ?>
+<?php $_SESSION['alamat'] = baseurl.'guru/jadwal/'.$_SESSION['mapel']; ?>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
   *{
@@ -92,7 +94,22 @@ body{
       </tr>
     </thead>
     <tbody>
-        <?php foreach($data['jadwal'] as $jadwal): ?>
+    <?php 
+    $daysOfWeek = ['Senin' => 1, 'Selasa' => 2, 'Rabu' => 3, 'Kamis' => 4];
+
+    
+    usort($data['jadwal'], function($a, $b) use ($daysOfWeek) {
+      return $daysOfWeek[$a['hari']] - $daysOfWeek[$b['hari']];
+    });
+
+    $currentDay = null;
+
+    foreach($data['jadwal'] as $jadwal):
+      if ($currentDay !== $jadwal['hari']) {
+        $currentDay = $jadwal['hari'];
+        echo '<tr><td colspan="5" style="text-align: right; font-weight: bold;"> </td></tr>';
+      }
+    ?>
       <tr>
         <th scope="row"><?= $jadwal['id_mapel']; ?></th>
         <td><?= $jadwal['mapel']; ?></td>

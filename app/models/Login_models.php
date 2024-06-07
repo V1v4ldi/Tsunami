@@ -35,6 +35,7 @@ class Login_models
 
                 // Kembalikan role
                 return $role;
+                $_SESSION['login_done'] = false;
             } else {
                 // Password doesn't match
                 

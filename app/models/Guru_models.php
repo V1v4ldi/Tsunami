@@ -39,4 +39,15 @@ class Guru_models {
 
         return $this->db->rowCount();
     }
+
+    public function hapusguru($id)
+    {
+        $query = "DELETE FROM guru WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

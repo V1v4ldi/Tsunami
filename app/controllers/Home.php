@@ -6,9 +6,9 @@ class Home extends Controller{
         session_destroy();
         
         $data['judul'] = 'Home';
-        $this->view('templates/header', $data);
+        $this->view('templates/home dan login/header', $data);
         $this->view('home/index', $data);
-        $this->view('templates/footer');
+        $this->view('templates/home dan login/footer');
     }
 
     public function login()
@@ -17,9 +17,9 @@ class Home extends Controller{
         session_destroy();
 
         $data['judul'] = 'Halaman Login';
-        $this->view('templates/header', $data);
+        $this->view('templates/home dan login/header', $data);
         $this->view('home/login', $data);
-        $this->view('templates/footer');
+        $this->view('templates/home dan login/footer');
     }
 
     public function logincek()

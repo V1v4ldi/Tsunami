@@ -1,3 +1,4 @@
+<?php require_once '../app/config/ceksiswa.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
