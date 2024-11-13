@@ -12,37 +12,27 @@ class Login_models
     
     private $tables = [
         'admin' => 'admin',
-        'guru' => 'pengajar',
-        'murid' => 'siswa'
     ];
 
     public function ceklogin($data) {
         foreach ($this->tables as $table => $role) {
             
-        $query = 'SELECT * FROM ' . $table. ' WHERE email=:email';    
+        $query = 'SELECT * FROM ' . $table. ' WHERE username=:username';    
         
         $this->db->query($query);
-        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':username', $data['username']);
         $row = $this->db->single();
 
-        // Jika pengguna ditemukan dan password cocok
+        
         if ($row !== false) {
-            // User found, check password
+           
             if ($data['password'] == $row['password']) {
-                // Password matches, set session and return true
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['role'] = $role;
-
-                // Kembalikan role
                 return $role;
-                $_SESSION['login_done'] = false;
             } else {
-                // Password doesn't match
-                
     
-                $message =  "<SCRIPT> //not showing me this
+                $message =  "<SCRIPT>
                 alert('Password Salah!')
-                window.location.replace('".baseurl."home/login');
+                window.location.replace('".baseurl."admin');
                 </SCRIPT>";
                 return ['error' => $message];
             }
@@ -51,7 +41,7 @@ class Login_models
     // User not found
     $message = "<SCRIPT>
     alert('User Tidak Ditemukan!')
-    window.location.replace('".baseurl."home/login');
+    window.location.replace('".baseurl."admin');
     </SCRIPT>";
     return ['error' => $message];
     }
