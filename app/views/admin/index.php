@@ -1,5 +1,4 @@
-
-    <div class="wrapper">
+<div class="wrapper">
         <form action="<?=baseurl?>admin/logincek" method="POST">
             <h1>Login</h1>
             <div class="input-box">

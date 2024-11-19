@@ -1,0 +1,64 @@
+.nav-bar {
+  width: 100vw;
+  height: 80px;
+  padding: 0 50px;
+  background: #1976d2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  box-shadow:
+  0px 2.3px 1.9px rgba(0, 0, 0, 0.031),
+  0px 5.4px 4.3px rgba(0, 0, 0, 0.045),
+  0px 9.7px 7.7px rgba(0, 0, 0, 0.055),
+  0px 16.1px 12.8px rgba(0, 0, 0, 0.065),
+  0px 26.5px 21.2px rgba(0, 0, 0, 0.075),
+  0px 46.2px 37px rgba(0, 0, 0, 0.089),
+  0px 100px 80px rgba(0, 0, 0, 0.12);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  color: #e3f2fd;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.nav-txt-frame {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.txt-nav {
+  color: #e3f2fd;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.txt-nav:hover {
+  background-color: #1565c0;
+  transform: scale(1.2);
+}

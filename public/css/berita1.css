@@ -1,0 +1,254 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #CBDCEB;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.nav-bar {
+  width: 100vw;
+  height: 80px;
+  padding: 0 50px;
+  background: #1976d2;
+  display: flex;
+  box-shadow:
+  0px 2.3px 1.9px rgba(0, 0, 0, 0.031),
+  0px 5.4px 4.3px rgba(0, 0, 0, 0.045),
+  0px 9.7px 7.7px rgba(0, 0, 0, 0.055),
+  0px 16.1px 12.8px rgba(0, 0, 0, 0.065),
+  0px 26.5px 21.2px rgba(0, 0, 0, 0.075),
+  0px 46.2px 37px rgba(0, 0, 0, 0.089),
+  0px 100px 80px rgba(0, 0, 0, 0.12);
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  background-color: #1565c0;
+  transform: scale(1.2);
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  color: #e3f2fd;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.nav-txt-frame {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.txt-nav {
+  color: #e3f2fd;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.txt-nav:hover {
+  background-color: #1565c0;
+  transform: scale(1.2);
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+}
+
+header .logo-title {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 40px;
+    margin-right: 15px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+table {
+    width: 80%; 
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.85em;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #0056b3;
+    color: white;
+    font-size: 1rem;
+}
+
+table td {
+    font-size: 0.9rem;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #eaf2ff;
+    transition: background-color 0.3s ease;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 95%; 
+    }
+
+    table th, table td {
+        font-size: 0.8rem; 
+        padding: 6px 10px;
+    }
+}
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.news-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-box:hover {
+    transform: translateY(-10px);
+}
+
+.news-box .image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-box .content {
+    padding: 15px;
+}
+
+.news-box h3 {
+    font-size: 1.1rem;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.news-box h3 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.news-box h3 a:hover {
+    text-decoration: underline;
+}
+
+.news-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+@media (max-width: 768px) {
+    .news-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-box {
+        width: 90%;
+    }
+
+    table th, table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    table {
+        width: 95%;
+    }
+}
+
+.footer {
+    background-color : #133E87;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+.footer-animation {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 5px;
+    }
+
+    .footer-animation {
+        width: 120px;
+    }
+}

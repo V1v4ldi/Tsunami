@@ -2,50 +2,53 @@
 class Home extends Controller{
     public function index()
     {
-        session_start();
-        session_destroy();
-        
         $data['judul'] = 'Home';
-        $this->view('templates/home dan login/header', $data);
+        $data['lokasi'] = $this->models('Location_models')->semuahistory();
+        
+        $this->view('templates/home/header', $data);
         $this->view('home/index', $data);
-        $this->view('templates/home dan login/footer');
+        $this->view('templates/home/footer');
+    }
+    
+    public function berita(){
+        $data['judul'] = 'Berita';
+        $data['css'] = 'berita1.css';
+        $data['lokasi'] = $this->models('Location_models')->semuahistory();
+
+
+        $this->view('templates/header', $data);
+        $this->view('templates/pub-nav-bar', $data);
+        $this->view('home/berita', $data);
+        $this->view('templates/footer');
+    }
+    
+    public function definisi(){
+        $data['judul'] = 'Definisi';
+        $data['css'] = 'root1.css';
+        $this->view('templates/header', $data);
+        $this->view('templates/pub-nav-bar', $data);
+        $this->view('home/definisi', $data);
+        $this->view('templates/footer');
+    }
+    
+    public function daftar(){
+        $data['judul'] = 'Daftar Pencarian';
+        $data['css'] = 'daftar.css';
+        $data['korban'] = $this->models('User_models')->getAllData();
+
+
+        $this->view('templates/header', $data);
+        $this->view('templates/pub-nav-bar', $data);
+        $this->view('home/daftar', $data);
+        $this->view('templates/footer');
     }
 
-    public function login()
-    {    
-        session_start();
-        session_destroy();
-
-        $data['judul'] = 'Halaman Login';
-        $this->view('templates/home dan login/header', $data);
-        $this->view('home/login', $data);
-        $this->view('templates/home dan login/footer');
-    }
-
-    public function logincek()
-    {
-        session_start();
-        $role = $this->models('Login_models')->ceklogin($_POST);
-
-        if ($role){
-
-            if($role == 'admin'){
-                header('Location: ' . baseurl . 'admin');
-                exit;
-            }
-            elseif($role == 'pengajar'){
-                header('Location: ' . baseurl . 'guru');
-                exit;  
-            }
-            elseif($role == 'siswa'){
-                header('Location: ' . baseurl . 'siswa');
-                exit;
-            }
-            elseif(isset($role['error'])) {
-                $_SESSION['error'] = $role['error'];
-                echo $_SESSION['error'];
-                unset($_SESSION['error']);
-            }
-        }
-    }
+    public function upload(){
+        $data['css']='upload1.css';
+        $data['judul']='Upload Korban';
+        
+        $this->view('templates/header',$data);
+        $this->view('home/upload');
+        $this->view('templates/footer');
+}
 }

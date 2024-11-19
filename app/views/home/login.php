@@ -1,5 +1,4 @@
-    <?php $_SESSION['alamat'] = baseurl."home/login"; ?>
-    <style>
+<style>
       body{
         background-image: url("https://wallpaperaccess.com/full/1850865.jpg") ;
         background-repeat: no-repeat;

@@ -1,10 +1,10 @@
 <?php
 // Default URL
-define('baseurl','http://localhost/TCS/public/');
+define('baseurl','http://localhost/Tsunami/public/');
 
 //Image Path
-define('imgkrb', 'http://localhost/TCS/app/PrvImg');
-define('imgkrb_path', $_SERVER['DOCUMENT_ROOT'] . '/TCS/app/PrvImg');
+define('imgkrb', 'http://localhost/Tsunami/app/');
+define('imgkrb_path', $_SERVER['DOCUMENT_ROOT'] . '/Tsunami/app/PrvImg');
 
 // DB Connection
 define('DB_HOST','localhost');
